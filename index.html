@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen</title>
+    <link rel="icon" type="image/png" href="img/react.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="pinContainer">
-        <h2>Introduce tu Nombre y PIN</h2>
-        <input type="text" id="nameInput" placeholder="Ingrese su nombre"><br><br>
-        <input type="password" id="pinInput" placeholder="Ingrese PIN"><br><br>
-        <button onclick="checkCredentials()">Ingresar</button>
-        <p id="pinError" class="error-message">PIN incorrecto o falta de nombre. Intenta de nuevo.</p>
+    <!-- Pantalla de inicio de sesión -->
+    <div id="loginWrapper">
+        <div id="pinContainer">
+            <h2>Introduce tu Nombre y PIN</h2>
+            <input type="text" id="nameInput" placeholder="Ingrese su nombre"><br><br>
+            <input type="password" id="pinInput" placeholder="Ingrese PIN"><br><br>
+            <center><button onclick="checkCredentials()">Ingresar</button></center>
+            <p id="pinError" class="error-message">PIN incorrecto o falta de nombre. Intenta de nuevo.</p>
+        </div>
     </div>
 
-    <div id="examContent">
-    
-    <!--ADD YOUR INSTRUCCTIOS HERE-->
+    <!-- Contenido del examen -->
+    <div id="examContent" style="display: none;">
+        <div id="examInfo">
+            <p>Tiempo restante: <span id="time">3600</span> segundos</p>
+            <p>Nota Maxima a Obtener: <span id="points">100</span> puntos</p>
+            <p id="warning">Advertencias: 0</p>
+        </div>
 
-
-
-    <!--*****************************-->
-
-
-    <!--*****************************-->  
-<br><br><br>
-        <p id="timer">Tiempo restante: <span id="time">7200</span> segundos</p>
-        <p id="warning"></p>
-
-        <!-- Iframe para cargar el compilador -->
-        <iframe src="https://onecompiler.com/nodejs" width="90%" height="500px"></iframe>
+        <div id="questionSection">
+            <p id="questionText">Cambiar Texto al Hacer Click: Crea un componente que muestre un párrafo con un texto
+                inicial. Al hacer clic en el párrafo, el texto debe cambiar a uno nuevo. Usa useState para manejar el
+                estado del texto.</p>
+            <!-- Iframe para cargar el compilador -->
+            <iframe id="questionIframe"
+                src="https://stackblitz.com/edit/react-simple-code-editor?embed=1&file=src%2FApp.js" width="90%"
+                height="500px"></iframe>
+        </div>
+        <br>
 
         <!-- Formulario para pegar el código -->
         <form id="examForm">
-            <label for="code">Pega aquí tu código editado:</label><br>
+            <label for="code">Inserte su Respuesta:</label><br><br>
             <textarea id="code" name="code" rows="10" cols="50"></textarea><br><br>
-
-            <button type="button" onclick="submitExam()">Enviar Examen</button>
+            <button type="button" onclick="submitAnswer()">Enviar Respuesta</button>
         </form>
 
-
-        <h1>Documentación</h1>
-
-
-    <!-- Enlace de codigos de ejemplo a mostrar -->
-        <iframe src="" width="90%" height="500px"></iframe>
-        
-
+        <br>
+        <button id="nextQuestionButton" style="display:none;" onclick="nextQuestion()">Siguiente Pregunta</button>
+        <br>
+        <div id="reactDocSection">
+            <p><strong>Documentación de React:</strong></p>
+            <iframe id="reactDocIframe" src="https://react.dev/reference/react/useState" width="90%" height="500px"
+                style="border: 1px solid #ccc;"></iframe>
+        </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
     <script src="scripts.js"></script>
 </body>
+
 </html>

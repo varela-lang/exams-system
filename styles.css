@@ -6,6 +6,19 @@ body {
     padding: 20px;
 }
 
+#loginWrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#examContent {
+    display: none;
+    margin: 0;
+    padding: 20px;
+}
+
 h1, h2 {
     color: #ffcc00;
 }
@@ -53,4 +66,41 @@ iframe {
 
 .error-message {
     color: #ff4d4d;
+}
+
+#questionSection {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #ffcc00;
+    margin: 10px 0 5px;
+}
+
+.description, .requirements {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+code {
+    background-color: #555;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #ffcc00;
 }
